@@ -42,6 +42,18 @@ softwares were built and tested to ensure accuracy and consistency with previous
 expected functionality. Testing showed accurate and consistent results, confirming the reliability
 of the modified code.
 
+<h1> Discussion </h1>
+In terms of future research, it would be useful to explore other fork() alternatives.
+Baumann et al., 2019 introduced the idea of using vfork() and clone() as other potential
+alternatives alongside posix_spawn(). While vfork() is only a variant of the typical fork(), it
+creates a new process that shares the parent’s address space until the child calls exec(). This
+would reduce the fork() cost of cloning the parent’s address space. clone()’s behavior is highly
+similar to that of fork()’s but it provides more control over aspects of the child copy process.
+Modifying the open-source softwares used in this project to instead use these alternatives would
+allow researchers to explore the accessibility and usability of these functions. Researchers could
+also perform run-time analysis on the different versions of the softwares that use different
+process creation functions and identify the most optimal function for use in future software.
+
 <h1> References </h1>
 
 Baumann, A, Appavoo, J., Krieger, O., & Roscoe, T. (2019, May 13-15). A fork() in the road.
