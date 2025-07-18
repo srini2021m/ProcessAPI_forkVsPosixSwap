@@ -42,8 +42,7 @@ of the modified code.
 
 <h1> Discussion </h1>
 Alongside consistent program behavior, there were no significant differences in runtime
-observed in the modified posix_spawn() code compared to the original fork() program. However, the code does have better portability and resource efficiency because posix_spawn() does not duplicate address space and is thus, more suitable for systems with limited resources or without full fork() support. Thus, 
-future research should focus on investigating differences between fork() and its other alternatives.
+observed in the modified posix_spawn() code compared to the original fork() program. However, the code does have better portability and resource efficiency because posix_spawn() does not duplicate address space and is thus, more suitable for systems with limited resources or without full fork() support. Future research should focus on investigating differences between fork() and its other alternatives.
 Baumann et al., 2019 introduced the idea of using vfork() and clone() as other potential
 alternatives alongside posix_spawn(). While vfork() is only a variant of the typical fork(), it
 creates a new process that shares the parent’s address space until the child calls exec(). This
